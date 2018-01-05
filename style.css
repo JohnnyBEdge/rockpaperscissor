@@ -1,0 +1,11 @@
+.container{
+  background-image: url(paper.jpg);
+  background-size: cover;
+  width: 600px;
+  height: 500px;
+  display: inline-block;
+  margin-left: 25%;
+  text-align: center;
+  border-style: groove;
+  border-color: black;
+}

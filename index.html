@@ -7,13 +7,73 @@
   </head>
   <body>
 
-    <script type="text/javascript">
+    <div class="container">
+      <h1> Rock, Paper, Scissors</h1>
+      <button type="button" name="Rock">Rock</button>
+      <button type="button" name="Paper">Paper</button>
+      <button type="button" name="Scissors">Scissors</button>
 
-    var choice = ["rock","paper","scissors"]
+    </div>
 
-    var randomChoice= choice[(Math.floor(Math.random() * choice.length))]
+    script type="text/javascript">
 
-    console.log(randomChoice);
+    var game;
+  var compScore =0;
+  var playerScore=0;
+
+  function gamePlay(){
+
+    for (game = 0; game < 5; game++){
+
+  var choice = ["Rock","Paper","Scissors"];
+  const playerSelection = capitalize();
+  const computerSelection = computerPlay();
+
+  var finalScore = ( playerScore, compScore);
+
+
+  function capitalize() {
+    const playerSelection = prompt("Type 'rock', 'paper', or 'scissors'.")
+    return playerSelection.charAt().toUpperCase() + playerSelection.toLowerCase().slice(1);
+  }
+
+  function computerPlay () {
+    return choice[Math.floor(Math.random() * choice.length)]
+    }
+
+  if (playerSelection === computerSelection ) {
+    console.log("Draw!");
+    } else if ( playerSelection === "Rock" && computerSelection === "Paper"){
+      console.log("You lose! Paper beats rock.")
+       compScore++;
+    } else if ( playerSelection === "Rock" && computerSelection === "Scissors"){
+      console.log("You win! Rock beats scissors.")
+       playerScore++;
+    } else if ( playerSelection === "Paper" && computerSelection === "Rock"){
+      console.log("You win! Paper beats rock.")
+       playerScore++;
+    } else if ( playerSelection === "Paper" && computerSelection === "Scissors"){
+      console.log("You lose! Scissors beats paper.")
+       compScore++;
+    } else if ( playerSelection === "Scissors" && computerSelection === "Paper"){
+      console.log("You win! Scissors beats paper.")
+       playerScore++;
+    } else if ( playerSelection === "Scissors" && computerSelection === "Rock"){
+      console.log("You lose! Rock beats scissors.");
+       compScore++;
+    }
+
+
+  }
+  }
+
+  gamePlay();
+  console.log(playerSelection);
+  console.log(computerSelection);
+  console.log(playerScore);
+  console.log(compScore)
+  console.log(finalScore)
+
 
     </script>
 
