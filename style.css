@@ -1,4 +1,5 @@
 .container{
+  font-family: 'Crafty Girls', cursive;
   background-image: url(paper.jpg);
   background-size: cover;
   width: 600px;
@@ -8,4 +9,59 @@
   text-align: center;
   border-style: groove;
   border-color: black;
+}
+
+ .container #title{
+  font-size: 2.5em;
+  margin: 25px 20px 0 70px;
+}
+
+.container #name {
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 1.5em;
+  float: right;
+  margin-top: -13px;
+  margin-right: 5px;
+
+}
+
+.container #rules{
+  font-size: 1.25em;
+  margin:61px 50px 0 85px;
+  line-height: 175%;
+  text-align: justify;
+  text-indent: 50px;
+}
+button {
+  background-color: red;
+}
+button #rock{
+  background-color: red;
+  background-image: url(rock.jpg);
+  width: 20px;
+  height: auto;
+}
+button #paper2{
+  background-image: url(paper2.jpg);
+  width: 20px;
+  height: auto;
+}
+button #scissors{
+  background-image: url(scissors.jpg);
+  width: 20px;
+  height: auto;
+}
+
+img {
+  border-style: ridge;
+  border-color: black;
+  border-width: thin;
+  width: 55px;
+  height: auto;
+  margin-right: 50px;
+  }
+
+img #scissors {
+  width: 60px;
+  height: 75px;
 }

@@ -3,79 +3,99 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Crafty+Girls" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
     <title></title>
   </head>
   <body>
 
     <div class="container">
-      <h1> Rock, Paper, Scissors</h1>
-      <button type="button" name="Rock">Rock</button>
-      <button type="button" name="Paper">Paper</button>
-      <button type="button" name="Scissors">Scissors</button>
+      <p id="title"> Rock, Paper, Scissors</p>
+      <p id="name">By: John Martin</p>
+      <p id="rules"> The game is Rock, Paper, Scissors. Playing against the machine, make your selction
+        and the winner will be announced afterwards. Best of 5 wins! May dog have mercy on your soul... </p>
+
+      <img src="rock.jpg" alt="Rock" id="rock">
+      <img src="paper2.jpg" alt="Paper" id="paper">
+      <img src="scissors.jpg" alt="Scissors" id="scissors">
 
     </div>
 
     script type="text/javascript">
 
-    var game;
-  var compScore =0;
-  var playerScore=0;
-
-  function gamePlay(){
-
-    for (game = 0; game < 5; game++){
-
-  var choice = ["Rock","Paper","Scissors"];
-  const playerSelection = capitalize();
-  const computerSelection = computerPlay();
-
-  var finalScore = ( playerScore, compScore);
+    const choice = ["Rock","Paper","Scissors"];
+    var playerSelection = capitalize();
+    var computerSelection = computerPlay();
+    var round = 0;
+    var compScore = 0;
+    var playerScore = 0;
 
 
-  function capitalize() {
-    const playerSelection = prompt("Type 'rock', 'paper', or 'scissors'.")
-    return playerSelection.charAt().toUpperCase() + playerSelection.toLowerCase().slice(1);
-  }
 
-  function computerPlay () {
-    return choice[Math.floor(Math.random() * choice.length)]
-    }
-
-  if (playerSelection === computerSelection ) {
-    console.log("Draw!");
-    } else if ( playerSelection === "Rock" && computerSelection === "Paper"){
-      console.log("You lose! Paper beats rock.")
-       compScore++;
-    } else if ( playerSelection === "Rock" && computerSelection === "Scissors"){
-      console.log("You win! Rock beats scissors.")
-       playerScore++;
-    } else if ( playerSelection === "Paper" && computerSelection === "Rock"){
-      console.log("You win! Paper beats rock.")
-       playerScore++;
-    } else if ( playerSelection === "Paper" && computerSelection === "Scissors"){
-      console.log("You lose! Scissors beats paper.")
-       compScore++;
-    } else if ( playerSelection === "Scissors" && computerSelection === "Paper"){
-      console.log("You win! Scissors beats paper.")
-       playerScore++;
-    } else if ( playerSelection === "Scissors" && computerSelection === "Rock"){
-      console.log("You lose! Rock beats scissors.");
-       compScore++;
+    // this takes the players choice no matter what capitalization they used or didnt use
+    function capitalize() {
+      const playerSelection = prompt("Type 'rock', 'paper', or 'scissors'.")
+      return playerSelection.charAt().toUpperCase() + playerSelection.toLowerCase().slice(1);
     }
 
 
-  }
-  }
+    // this has the computer make a random selection
+    function computerPlay () {
+      return choice[Math.floor(Math.random() * choice.length)]
+      }
 
-  gamePlay();
-  console.log(playerSelection);
-  console.log(computerSelection);
-  console.log(playerScore);
-  console.log(compScore)
-  console.log(finalScore)
+    if (playerSelection === computerSelection ) {
+      // console.log("Draw!");
+      round += 1;
+      } else if ( playerSelection === "Rock" && computerSelection === "Paper"){
+        // console.log("You lose! Paper beats rock.");
+        compScore += 1;
+        round += 1;
+      } else if ( playerSelection === "Rock" && computerSelection === "Scissors"){
+       // console.log("You win! Rock beats scissors.");
+        playerScore += 1;
+        round += 1;
+      } else if ( playerSelection === "Paper" && computerSelection === "Rock"){
+       // console.log("You win! Paper beats rock.");
+        playerScore += 1;
+        round += 1;
+      } else if ( playerSelection === "Paper" && computerSelection === "Scissors"){
+       // console.log("You lose! Scissors beats paper.");
+        compScore += 1;
+        round += 1;
+      } else if ( playerSelection === "Scissors" && computerSelection === "Paper"){
+       // console.log("You win! Scissors beats paper.");
+        playerScore += 1;
+        round += 1;
+      } else if ( playerSelection === "Scissors" && computerSelection === "Rock"){
+       // console.log("You lose! Rock beats scissors.");
+        compScore += 1;
+        round += 1;
+      }
 
+
+    if(round === 5){
+
+      if(playerScore>compScore){
+        console.log("You won!")
+      } else {
+        console.log("You lost!")
+      }
+
+    } else {
+      round += 1
+    }
+
+
+    console.log(playerSelection);
+    console.log(computerSelection);
+    console.log(playerScore);
+    console.log(compScore);
+    console.log(round)
 
     </script>
+
+
 
   </body>
 </html>
