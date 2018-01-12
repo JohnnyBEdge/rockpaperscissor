@@ -21,77 +21,88 @@
 
     </div>
 
-    script type="text/javascript">
 
-    const choice = ["Rock","Paper","Scissors"];
-    var playerSelection = capitalize();
-    var computerSelection = computerPlay();
-    var round = 0;
-    var compScore = 0;
-    var playerScore = 0;
+    <script type="text/javascript">
+
+    function game() {
 
 
+        //variables
+  const choice = ["Rock","Paper","Scissors"];
+  var playerSelection = capitalize();
+  var computerSelection = computerPlay();
 
-    // this takes the players choice no matter what capitalization they used or didnt use
-    function capitalize() {
-      const playerSelection = prompt("Type 'rock', 'paper', or 'scissors'.")
-      return playerSelection.charAt().toUpperCase() + playerSelection.toLowerCase().slice(1);
+
+
+  // this takes the players choice no matter what capitalization they used or didnt use
+  function capitalize() {
+    const playerSelection = prompt("Type 'rock', 'paper', or 'scissors'.")
+    return playerSelection.charAt().toUpperCase() + playerSelection.toLowerCase().slice(1);
     }
 
 
-    // this has the computer make a random selection
-    function computerPlay () {
-      return choice[Math.floor(Math.random() * choice.length)]
-      }
-
-    if (playerSelection === computerSelection ) {
-      // console.log("Draw!");
-      round += 1;
-      } else if ( playerSelection === "Rock" && computerSelection === "Paper"){
-        // console.log("You lose! Paper beats rock.");
-        compScore += 1;
-        round += 1;
-      } else if ( playerSelection === "Rock" && computerSelection === "Scissors"){
-       // console.log("You win! Rock beats scissors.");
-        playerScore += 1;
-        round += 1;
-      } else if ( playerSelection === "Paper" && computerSelection === "Rock"){
-       // console.log("You win! Paper beats rock.");
-        playerScore += 1;
-        round += 1;
-      } else if ( playerSelection === "Paper" && computerSelection === "Scissors"){
-       // console.log("You lose! Scissors beats paper.");
-        compScore += 1;
-        round += 1;
-      } else if ( playerSelection === "Scissors" && computerSelection === "Paper"){
-       // console.log("You win! Scissors beats paper.");
-        playerScore += 1;
-        round += 1;
-      } else if ( playerSelection === "Scissors" && computerSelection === "Rock"){
-       // console.log("You lose! Rock beats scissors.");
-        compScore += 1;
-        round += 1;
-      }
-
-
-    if(round === 5){
-
-      if(playerScore>compScore){
-        console.log("You won!")
-      } else {
-        console.log("You lost!")
-      }
-
-    } else {
-      round += 1
+  // this has the computer make a random selection
+  function computerPlay () {
+    return choice[Math.floor(Math.random() * choice.length)]
     }
 
+  if (playerSelection === computerSelection ) {
+      round++;
+      draw++;
+       } else if ( playerSelection === "Rock" && computerSelection === "Paper"){
+        lose++;
+        round++;
+    } else if ( playerSelection === "Rock" && computerSelection === "Scissors"){
+       win++;
+       round++;
+    } else if ( playerSelection === "Paper" && computerSelection === "Rock"){
+        win++;
+        round++;
+    } else if ( playerSelection === "Paper" && computerSelection === "Scissors"){
+        lose++;
+        round++;
+    } else if ( playerSelection === "Scissors" && computerSelection === "Paper"){
+        win++;
+        round++;
+    } else if ( playerSelection === "Scissors" && computerSelection === "Rock"){
+        lose++;
+        round++;
+      }
 
-    console.log(playerSelection);
-    console.log(computerSelection);
-    console.log(playerScore);
-    console.log(compScore);
-    console.log(round)
+
+
+  //announces winner/loser after 5 rounds
+  if(round === 5 ){
+    if(win > lose){
+          console.log("Congratulations! You beat the machine! Humanity will live to see another day.")
+            } else if (win === lose){
+              console.log("Draw!")
+            } else {
+              console.log("The machine prevails! All is lost!")
+            }
+
+  }
+
+
+
+  //console.log('Round: ' +round);
+  //console.log("The player chose: " +playerSelection);
+  //console.log("The machine chose: " +computerSelection);
+
+  }
+
+  var round = 0;
+  var win = 0;
+  var lose = 0;
+  var draw = 0;
+  var run = 0;
+  for( run = 0; run < 5; run++){
+    game();
+
+  }
+  console.log(win);
+  console.log(lose);
+  console.log(round);
 
     </script>
 

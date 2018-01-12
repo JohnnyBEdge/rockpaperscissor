@@ -32,9 +32,7 @@
   text-align: justify;
   text-indent: 50px;
 }
-button {
-  background-color: red;
-}
+
 button #rock{
   background-color: red;
   background-image: url(rock.jpg);
