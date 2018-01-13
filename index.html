@@ -15,94 +15,96 @@
       <p id="rules"> The game is Rock, Paper, Scissors. Playing against the machine, make your selction
         and the winner will be announced afterwards. Best of 5 wins! May dog have mercy on your soul... </p>
 
-      <img src="rock.jpg" alt="Rock" id="rock">
+      <img onclick="game()" src="rock.jpg" alt="Rock" id="rock">
       <img src="paper2.jpg" alt="Paper" id="paper">
       <img src="scissors.jpg" alt="Scissors" id="scissors">
 
     </div>
 
+<button onclick="game()"> Click to Play</button>
 
     <script type="text/javascript">
 
-    function game() {
+
+function game() {
 
 
-        //variables
-  const choice = ["Rock","Paper","Scissors"];
-  var playerSelection = capitalize();
-  var computerSelection = computerPlay();
+      //variables
+const choice = ["Rock","Paper","Scissors"];
+var playerSelection = capitalize();
+var computerSelection = computerPlay();
 
 
+// this takes the players choice no matter what capitalization they used or didnt use
+function capitalize() {
+  const playerSelection = prompt("Type 'rock', 'paper', or 'scissors'.")
+  return playerSelection.charAt().toUpperCase() + playerSelection.toLowerCase().slice(1);
+  }
 
-  // this takes the players choice no matter what capitalization they used or didnt use
-  function capitalize() {
-    const playerSelection = prompt("Type 'rock', 'paper', or 'scissors'.")
-    return playerSelection.charAt().toUpperCase() + playerSelection.toLowerCase().slice(1);
-    }
 
+// this has the computer make a random selection
+function computerPlay () {
+  return choice[Math.floor(Math.random() * choice.length)]
+  }
 
-  // this has the computer make a random selection
-  function computerPlay () {
-    return choice[Math.floor(Math.random() * choice.length)]
-    }
-
-  if (playerSelection === computerSelection ) {
+if (playerSelection === computerSelection ) {
+    round++;
+    draw++;
+     } else if ( playerSelection === "Rock" && computerSelection === "Paper"){
+      lose++;
       round++;
-      draw++;
-       } else if ( playerSelection === "Rock" && computerSelection === "Paper"){
-        lose++;
-        round++;
-    } else if ( playerSelection === "Rock" && computerSelection === "Scissors"){
-       win++;
-       round++;
-    } else if ( playerSelection === "Paper" && computerSelection === "Rock"){
-        win++;
-        round++;
-    } else if ( playerSelection === "Paper" && computerSelection === "Scissors"){
-        lose++;
-        round++;
-    } else if ( playerSelection === "Scissors" && computerSelection === "Paper"){
-        win++;
-        round++;
-    } else if ( playerSelection === "Scissors" && computerSelection === "Rock"){
-        lose++;
-        round++;
-      }
+  } else if ( playerSelection === "Rock" && computerSelection === "Scissors"){
+     win++;
+     round++;
+  } else if ( playerSelection === "Paper" && computerSelection === "Rock"){
+      win++;
+      round++;
+  } else if ( playerSelection === "Paper" && computerSelection === "Scissors"){
+      lose++;
+      round++;
+  } else if ( playerSelection === "Scissors" && computerSelection === "Paper"){
+      win++;
+      round++;
+  } else if ( playerSelection === "Scissors" && computerSelection === "Rock"){
+      lose++;
+      round++;
+    }
 
+//console.log('Round: ' +round);
+//console.log("The player chose: " +playerSelection);
+//console.log("The machine chose: " +computerSelection);
 
+}
 
-  //announces winner/loser after 5 rounds
-  if(round === 5 ){
-    if(win > lose){
-          console.log("Congratulations! You beat the machine! Humanity will live to see another day.")
-            } else if (win === lose){
-              console.log("Draw!")
-            } else {
-              console.log("The machine prevails! All is lost!")
-            }
+var round = 0;
+var win = 0;
+var lose = 0;
+var draw = 0;
+var run = 0;
+for( run = 0; run < 5; run++){
+  game();
 
-  }
+}
 
+//announces winner/loser after 5 rounds
+if(round === 5 ){
+  if(win > lose){
+        console.log("Congratulations! You beat the machine! Humanity will live to see another day")
+          } else if (win === lose){
+            console.log("Draw!")
+          } else {
+            console.log("The machine prevails! All is lost!")
+          }
 
+}
 
-  //console.log('Round: ' +round);
-  //console.log("The player chose: " +playerSelection);
-  //console.log("The machine chose: " +computerSelection);
+/*
+console.log("Wins: " +win);
+console.log("Loses: " +lose);
+console.log("Round: " +round);
+console.log("Draws: " +draw)
+*/
 
-  }
-
-  var round = 0;
-  var win = 0;
-  var lose = 0;
-  var draw = 0;
-  var run = 0;
-  for( run = 0; run < 5; run++){
-    game();
-
-  }
-  console.log(win);
-  console.log(lose);
-  console.log(round);
 
     </script>
 
