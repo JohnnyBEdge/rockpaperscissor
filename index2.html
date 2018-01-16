@@ -15,22 +15,14 @@
       <p id="rules"> The game is Rock, Paper, Scissors. Playing against the machine, make your selction
         and the winner will be announced afterwards. Best of 5 wins! May dog have mercy on your soul... </p>
 
-    <div class="buttons">
       <img onclick="selectRock()" src="rock.jpg" alt="Rock" id="rock">
       <img onclick="selectPaper()" src="paper2.jpg" alt="Paper" id="paper">
       <img onclick="selectScissors()" src="scissors.jpg" alt="Scissors" id="scissors">
-    </div>
-
-    <div class="counter">
-      <p id="winCount">Wins: <p id="wins"></p></p>
-      <p id="loseCount">Losses: <p id="losses"></p></p>
-      <p id="drawCount">Draws: <p id="draws"></p></p>
 
     </div>
-
-
-    </div>
-
+    <p id="wins"></p>
+    <p id="losses"></p>
+    <p id="draws"></p>
 
     <script type="text/javascript">
 
@@ -108,11 +100,6 @@ document.getElementById("wins").innerHTML = (win);
 document.getElementById("losses").innerHTML = (lose);
 document.getElementById("draws").innerHTML = (draw);
 
-console.log("Wins: " +win);
-console.log("Loses: " +lose);
-console.log("Round: " +round);
-console.log("Draws: " +draw);
-
 //announces winner/loser after 5 rounds
 if(round === 5 ){
   if(win > lose){
@@ -121,13 +108,14 @@ if(round === 5 ){
             alert("Draw!")
           } else {
             alert("The machine prevails! All is lost!")
-          }
-          alert("Game over! Refresh the page to play again.")
-        }
+          }}
 
 
 
-
+console.log("Wins: " +win);
+console.log("Loses: " +lose);
+console.log("Round: " +round);
+console.log("Draws: " +draw)
 
 }
 

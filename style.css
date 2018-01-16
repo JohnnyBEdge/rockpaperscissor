@@ -13,24 +13,25 @@
 
  .container #title{
   font-size: 2.5em;
-  margin: 25px 20px 0 70px;
+  margin: 8% 8% 0 19%;
 }
 
 .container #name {
   font-family: 'Cedarville Cursive', cursive;
   font-size: 1.5em;
   float: right;
-  margin-top: -13px;
+  margin-top: .7%;
   margin-right: 5px;
+  margin-bottom: 0;
 
 }
 
 .container #rules{
   font-size: 1.25em;
-  margin:61px 50px 0 85px;
-  line-height: 175%;
+  margin:9% 3% 0 20%;
+  line-height: 2.4;
   text-align: justify;
-  text-indent: 50px;
+  text-indent: 40px;
 }
 
 button #rock{
@@ -38,6 +39,7 @@ button #rock{
   background-image: url(rock.jpg);
   width: 20px;
   height: auto;
+
 }
 button #paper2{
   background-image: url(paper2.jpg);
@@ -49,17 +51,33 @@ button #scissors{
   width: 20px;
   height: auto;
 }
-
-img {
+.buttons {
+  margin-left: 12%;
+}
+.buttons img {
   border-style: ridge;
   border-color: black;
   border-width: thin;
   width: 55px;
   height: auto;
-  margin-right: 50px;
+  margin-right: 5%;
+  margin-top: -7%;
+
   }
 
 img #scissors {
   width: 60px;
   height: 75px;
 }
+
+.counter{
+    margin-top: 7%;
+    margin-left: 15%;
+}
+
+.counter p{
+  display: inline;
+  text-align: center;
+  font-size: 1.5em;
+  margin-right: 2%;
+  }
