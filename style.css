@@ -34,40 +34,14 @@
   text-indent: 40px;
 }
 
-button #rock{
-  background-color: red;
-  background-image: url(rock.jpg);
-  width: 20px;
-  height: auto;
+.choice img{
+  width: 50px;
+  border: solid black 2px;
+  margin: 0 20px;
+}
 
-}
-button #paper2{
-  background-image: url(paper2.jpg);
-  width: 20px;
-  height: auto;
-}
-button #scissors{
-  background-image: url(scissors.jpg);
-  width: 20px;
-  height: auto;
-}
-.buttons {
-  margin-left: 12%;
-}
-.buttons img {
-  border-style: ridge;
-  border-color: black;
-  border-width: thin;
-  width: 55px;
-  height: auto;
-  margin-right: 5%;
-  margin-top: -7%;
-
-  }
-
-img #scissors {
-  width: 60px;
-  height: 75px;
+.choice{
+  display: inline-block;
 }
 
 .counter{
@@ -80,4 +54,14 @@ img #scissors {
   text-align: center;
   font-size: 1.5em;
   margin-right: 2%;
+  position: relative;
+  top: 15px;
+  }
+
+.results{
+  font-size: 1.25em;
+  font-weight: bold;
+  position: relative;
+  top: 15px;
+  left: 20px;
   }

@@ -15,122 +15,50 @@
       <p id="rules"> The game is Rock, Paper, Scissors. Playing against the machine, make your selction
         and the winner will be announced afterwards. Best of 5 wins! May dog have mercy on your soul... </p>
 
-    <div class="buttons">
-      <img onclick="selectRock()" src="rock.jpg" alt="Rock" id="rock">
-      <img onclick="selectPaper()" src="paper2.jpg" alt="Paper" id="paper">
-      <img onclick="selectScissors()" src="scissors.jpg" alt="Scissors" id="scissors">
+    <div class="choices">
+      <div class="choice">
+        <img src="rock.jpg" alt = 'Rock' id= 'rock'>
+      </div>
+      <div class="choice">
+        <img src ="paper2.jpg" alt = 'Paper' id = "paper">
+      </div>
+      <div class="choice">
+        <img src ="scissors.jpg" alt = 'Scissors' id = "scissors">
+      </div>
     </div>
 
     <div class="counter">
       <p id="winCount">Wins: <p id="wins"></p></p>
       <p id="loseCount">Losses: <p id="losses"></p></p>
-      <p id="drawCount">Draws: <p id="draws"></p></p>
+      <p id="roundCount">Round: <p id="rounds"></p></p>
 
     </div>
 
+    <div class="results">
+      <p id="result">Click to Begin</p>
+      <p id="refresh"></p>
 
     </div>
 
-
-    <script type="text/javascript">
+    </div>
+    <script type="text/javascript" src = "jscript.js">
 
 /*
-    // takes the players click selection and assigns the variable
-    function capitalize() {
-      const playerSelection = prompt("Type 'rock', 'paper', or 'scissors'.")
-      return playerSelection.charAt().toUpperCase() + playerSelection.toLowerCase().slice(1);
-      }
-*/
+    function gamePlay(){
 
 
-    function selectRock() {
-      playerSelection = "Rock"
-      console.log("The player chose: "+playerSelection)
-      console.log("The computer chose: "+computerPlay());
-      game();
-    }
-    function selectPaper() {
-      playerSelection = "Paper"
-      console.log("The player chose: "+playerSelection)
-      console.log("The computer chose: "+computerPlay());
-      game();
-    }
-    function selectScissors() {
-      playerSelection = "Scissors"
-      console.log("The player chose: "+playerSelection)
-      console.log("The computer chose: "+computerPlay());
-      game();
-    }
-
-
-      //variables
-const choice = ["Rock","Paper","Scissors"];
-var playerSelection = "";
-var computerSelection = computerPlay();
-var round = 0;
-var win = 0;
-var lose = 0;
-var draw = 0;
-
-
-
-// this has the computer make a random selection
-function computerPlay () {
-  return choice[Math.floor(Math.random() * choice.length)]
-  console.log(computerSelection)
-  }
-
-function game(){
-if (playerSelection === computerSelection ) {
-    round++;
-    draw++;
-  } else if ( playerSelection === "Rock" && computerSelection === "Paper"){
-      lose++;
-      round++;
-  } else if ( playerSelection === "Rock" && computerSelection === "Scissors"){
-     win++;
-     round++;
-  } else if ( playerSelection === "Paper" && computerSelection === "Rock"){
-      win++;
-      round++;
-  } else if ( playerSelection === "Paper" && computerSelection === "Scissors"){
-      lose++;
-      round++;
-  } else if ( playerSelection === "Scissors" && computerSelection === "Paper"){
-      win++;
-      round++;
-  } else if ( playerSelection === "Scissors" && computerSelection === "Rock"){
-      lose++;
-      round++;
-    }
-
-document.getElementById("wins").innerHTML = (win);
-document.getElementById("losses").innerHTML = (lose);
-document.getElementById("draws").innerHTML = (draw);
-
-console.log("Wins: " +win);
-console.log("Loses: " +lose);
-console.log("Round: " +round);
-console.log("Draws: " +draw);
-
-//announces winner/loser after 5 rounds
-if(round === 5 ){
-  if(win > lose){
-        alert("Congratulations! You beat the machine! Humanity will live to see another day")
-          } else if (win === lose){
-            alert("Draw!")
-          } else {
-            alert("The machine prevails! All is lost!")
+    if(round === 5 ){
+      if(playerScore > computerScore){
+            alert("Congratulations! You beat the machine! Humanity will live to see another day")
+              } else if (playerScore === computerScore){
+                alert("Draw!")
+              } else {
+                alert("The machine prevails! All is lost!")
+              }
+              alert("Game over! Refresh the page to play again.")
+            }
           }
-          alert("Game over! Refresh the page to play again.")
-        }
-
-
-
-
-
-}
-
+*/
 
     </script>
 
